@@ -9,7 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{03148297
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FE0A4443-4240-4019-BCC4-7A0E7D1C5AB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exchangy.FixerIoFramework.ConsoleTestApp", "samples\Exchangy.FixerIoFramework.ConsoleTestApp\Exchangy.FixerIoFramework.ConsoleTestApp.csproj", "{8E7DF1CE-17F2-4B12-9975-2688E061AEB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.FixerIoFramework.ConsoleTestApp", "samples\Exchangy.FixerIoFramework.ConsoleTestApp\Exchangy.FixerIoFramework.ConsoleTestApp.csproj", "{8E7DF1CE-17F2-4B12-9975-2688E061AEB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exchangy.FixerIoFramework", "src\Exchangy.FixerIoFramework\Exchangy.FixerIoFramework.csproj", "{795F306E-9DE5-41BC-805A-F3DF9FA5E6EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exchangy.FixerIoFramework.DependencyInjection", "src\Exchangy.FixerIoFramework.DependencyInjection\Exchangy.FixerIoFramework.DependencyInjection.csproj", "{138ABA8B-C50B-4300-A832-746612CA2E91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,12 +25,22 @@ Global
 		{8E7DF1CE-17F2-4B12-9975-2688E061AEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E7DF1CE-17F2-4B12-9975-2688E061AEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E7DF1CE-17F2-4B12-9975-2688E061AEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{795F306E-9DE5-41BC-805A-F3DF9FA5E6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{795F306E-9DE5-41BC-805A-F3DF9FA5E6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{795F306E-9DE5-41BC-805A-F3DF9FA5E6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{795F306E-9DE5-41BC-805A-F3DF9FA5E6EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{138ABA8B-C50B-4300-A832-746612CA2E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{138ABA8B-C50B-4300-A832-746612CA2E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{138ABA8B-C50B-4300-A832-746612CA2E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{138ABA8B-C50B-4300-A832-746612CA2E91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8E7DF1CE-17F2-4B12-9975-2688E061AEB6} = {FE0A4443-4240-4019-BCC4-7A0E7D1C5AB6}
+		{795F306E-9DE5-41BC-805A-F3DF9FA5E6EA} = {37AD781F-2872-4B14-8FBD-CDC76169E72B}
+		{138ABA8B-C50B-4300-A832-746612CA2E91} = {37AD781F-2872-4B14-8FBD-CDC76169E72B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A0FCFED-46DB-44CA-81D2-2D367F547FB9}
