@@ -8,14 +8,14 @@ namespace Exchangy.FixerIoFramework
     {
         public static Task<IFixerResponse> LatestAsync(this IFixerIoClient client)
         {
-            var query = client.BuildQuery();
+            var query = HttpQueryBuilder.Build();
             return client.GetAsync("latest", query);
         }
 
         public static Task<IFixerResponse> LatestAsync(this IFixerIoClient client, IEnumerable<string> symbols)
         {
             var value = string.Join(',', symbols);
-            var query = client.BuildQuery(KeyValuePair.Create("symbols", value));
+            var query = HttpQueryBuilder.Build(KeyValuePair.Create("symbols", value));
             return client.GetAsync("latest", query);
         }
 

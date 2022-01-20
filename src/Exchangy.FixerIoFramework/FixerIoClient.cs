@@ -15,25 +15,29 @@ namespace Exchangy.FixerIoFramework
         public FixerIoClient(HttpClient httpClient, FixerOptions options)
         {
             _httpClient = httpClient;
+            _httpClient.BaseAddress = new Uri(options.BaseUrl);
             _accessKey = options.AccessKey;
         }
 
-        public Task<IFixerResponse> GetAsync(string path, string request)
+        public Task<IFixerResponse> GetAsync(string path, string request = null)
         {
             try
             {
                 return InnerGetAsync(path, request);
             }
-            catch (Exception ex)
+            catch
             {
-                IFixerResponse response = new FixerResponse();
-                return Task.FromResult(response);
+                //TODO [log] [Artem Tonoyan] [1/20/2022]: Add log.
+                return Task.FromResult<IFixerResponse>(new FixerResponse
+                {
+                    HttpStatusCode = System.Net.HttpStatusCode.BadRequest
+                });
             }
         }
 
         private async Task<IFixerResponse> InnerGetAsync(string path, string query)
         {
-            var request = $"{path}?{query}";
+            var request = HttpQueryBuilder.BuildRequest(path, KeyValuePair.Create("access_key", _accessKey), query);
             using var response = await _httpClient.GetAsync(request);
             if (response.IsSuccessStatusCode)
             {
@@ -50,23 +54,6 @@ namespace Exchangy.FixerIoFramework
             {
                 HttpStatusCode = response.StatusCode
             };
-        }
-
-        public string BuildQuery(params KeyValuePair<string, string>[] requestParams)
-        {
-            var request = $"access_key={_accessKey}";
-            if (requestParams != null && requestParams.Length > 0)
-            {
-                var builder = new StringBuilder();
-                foreach (var (key, value) in requestParams)
-                {
-                    builder.Append(key).Append('=').Append(value).Append('&');
-                }
-
-                request = $"{request}&{builder}";
-            }
-
-            return request.TrimEnd('&');
         }
     }
 }

@@ -18,9 +18,9 @@ namespace Exchangy.FixerIoFramework
 
         public Currency Currency { get; set; }
 
-        //public bool IsSuccess =>
-        //    HttpStatusCode == HttpStatusCode.OK &&
-        //    Currency != null &&
-        //    Currency.Success;
+        public bool IsSuccess =>
+            HttpStatusCode == HttpStatusCode.OK &&
+            Currency != null &&
+            Currency.Success;
     }
 }
