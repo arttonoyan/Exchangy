@@ -8,18 +8,18 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class FixerIoServiceCollectionExtensions
     {
-        public static IServiceCollection AddFixerIoClient(this IServiceCollection services, string name, Action<FixerOptions> optionsAction)
+        public static IServiceCollection AddFixerIoClient(this IServiceCollection services, Action<FixerOptions> optionsAction)
         {
             var options = new FixerOptions();
             optionsAction.Invoke(options);
-            return services.AddFixerIoClient(name, options);
+            return services.AddFixerIoClient(options);
         }
 
-        public static IServiceCollection AddFixerIoClient(this IServiceCollection services, string name, FixerOptions options)
+        public static IServiceCollection AddFixerIoClient(this IServiceCollection services, FixerOptions options)
         {
             services
                 .AddSingleton(options)
-                .AddHttpClient<IFixerIoClient, FixerIoClient>(name)
+                .AddHttpClient<IFixerIoClient, FixerIoClient>()
                 .AddPolicyHandler(GetRetryPolicy());
             return services;
         }
