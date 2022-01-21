@@ -37,7 +37,8 @@ namespace Exchangy.FixerIoFramework
 
         private async Task<IFixerResponse> InnerGetAsync(string path, string query)
         {
-            var request = HttpQueryBuilder.BuildRequest(path, KeyValuePair.Create("access_key", _accessKey), query);
+            var request = HttpQueryBuilder.BuildRequest(path, KeyValuePair
+                .Create("access_key", _accessKey), query);
             using var response = await _httpClient.GetAsync(request);
             if (response.IsSuccessStatusCode)
             {

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31624.102
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{37AD781F-2872-4B14-8FBD-CDC76169E72B}"
 EndProject
@@ -11,9 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FE0A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.FixerIoFramework.ConsoleTestApp", "samples\Exchangy.FixerIoFramework.ConsoleTestApp\Exchangy.FixerIoFramework.ConsoleTestApp.csproj", "{8E7DF1CE-17F2-4B12-9975-2688E061AEB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exchangy.FixerIoFramework", "src\Exchangy.FixerIoFramework\Exchangy.FixerIoFramework.csproj", "{795F306E-9DE5-41BC-805A-F3DF9FA5E6EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.FixerIoFramework", "src\Exchangy.FixerIoFramework\Exchangy.FixerIoFramework.csproj", "{795F306E-9DE5-41BC-805A-F3DF9FA5E6EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exchangy.FixerIoFramework.DependencyInjection", "src\Exchangy.FixerIoFramework.DependencyInjection\Exchangy.FixerIoFramework.DependencyInjection.csproj", "{138ABA8B-C50B-4300-A832-746612CA2E91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.FixerIoFramework.DependencyInjection", "src\Exchangy.FixerIoFramework.DependencyInjection\Exchangy.FixerIoFramework.DependencyInjection.csproj", "{138ABA8B-C50B-4300-A832-746612CA2E91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exchangy.FixerIoFramework.Tests", "src\Exchangy.FixerIoFramework.Tests\Exchangy.FixerIoFramework.Tests.csproj", "{789736DC-83D8-4A86-A84B-C98F0133A48D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{138ABA8B-C50B-4300-A832-746612CA2E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{138ABA8B-C50B-4300-A832-746612CA2E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{138ABA8B-C50B-4300-A832-746612CA2E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789736DC-83D8-4A86-A84B-C98F0133A48D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789736DC-83D8-4A86-A84B-C98F0133A48D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789736DC-83D8-4A86-A84B-C98F0133A48D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789736DC-83D8-4A86-A84B-C98F0133A48D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{8E7DF1CE-17F2-4B12-9975-2688E061AEB6} = {FE0A4443-4240-4019-BCC4-7A0E7D1C5AB6}
 		{795F306E-9DE5-41BC-805A-F3DF9FA5E6EA} = {37AD781F-2872-4B14-8FBD-CDC76169E72B}
 		{138ABA8B-C50B-4300-A832-746612CA2E91} = {37AD781F-2872-4B14-8FBD-CDC76169E72B}
+		{789736DC-83D8-4A86-A84B-C98F0133A48D} = {03148297-6738-4682-AA6C-55454E0330E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A0FCFED-46DB-44CA-81D2-2D367F547FB9}
