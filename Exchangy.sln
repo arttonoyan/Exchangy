@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.FixerIoFramework",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.FixerIoFramework.DependencyInjection", "src\Exchangy.FixerIoFramework.DependencyInjection\Exchangy.FixerIoFramework.DependencyInjection.csproj", "{138ABA8B-C50B-4300-A832-746612CA2E91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exchangy.FixerIoFramework.Tests", "src\Exchangy.FixerIoFramework.Tests\Exchangy.FixerIoFramework.Tests.csproj", "{789736DC-83D8-4A86-A84B-C98F0133A48D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.FixerIoFramework.Tests", "src\Exchangy.FixerIoFramework.Tests\Exchangy.FixerIoFramework.Tests.csproj", "{789736DC-83D8-4A86-A84B-C98F0133A48D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.FixerIoFramework.DataAccess", "src\Exchangy.FixerIoFramework.DataAccess\Exchangy.FixerIoFramework.DataAccess.csproj", "{49637819-D3EB-40F9-816B-5E5EEF0168B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{789736DC-83D8-4A86-A84B-C98F0133A48D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{789736DC-83D8-4A86-A84B-C98F0133A48D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{789736DC-83D8-4A86-A84B-C98F0133A48D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49637819-D3EB-40F9-816B-5E5EEF0168B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49637819-D3EB-40F9-816B-5E5EEF0168B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49637819-D3EB-40F9-816B-5E5EEF0168B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49637819-D3EB-40F9-816B-5E5EEF0168B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{795F306E-9DE5-41BC-805A-F3DF9FA5E6EA} = {37AD781F-2872-4B14-8FBD-CDC76169E72B}
 		{138ABA8B-C50B-4300-A832-746612CA2E91} = {37AD781F-2872-4B14-8FBD-CDC76169E72B}
 		{789736DC-83D8-4A86-A84B-C98F0133A48D} = {03148297-6738-4682-AA6C-55454E0330E5}
+		{49637819-D3EB-40F9-816B-5E5EEF0168B8} = {37AD781F-2872-4B14-8FBD-CDC76169E72B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A0FCFED-46DB-44CA-81D2-2D367F547FB9}

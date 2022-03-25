@@ -1,4 +1,5 @@
 ﻿using Exchangy.FixerIoFramework;
+using Exchangy.FixerIoFramework.DataAccess;
 using Polly;
 using Polly.Extensions.Http;
 using System;
@@ -19,6 +20,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             services
                 .AddSingleton(options)
+                .AddScoped<IExchangeRepository, ExchangeRepository>()
                 .AddHttpClient<IFixerIoClient, FixerIoClient>()
                 .AddPolicyHandler(GetRetryPolicy());
             return services;
