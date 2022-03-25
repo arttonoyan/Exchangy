@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\DataAccess\Exchangy.FixerIoFramework.DataAccess.csproj" />
     <ProjectReference Include="..\..\src\Exchangy.FixerIoFramework.DependencyInjection\Exchangy.FixerIoFramework.DependencyInjection.csproj" />
   </ItemGroup>
 

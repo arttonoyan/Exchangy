@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Exchangy.FixerIoFramework.DataAccess;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 
@@ -8,6 +9,8 @@ namespace Exchangy.FixerIoFramework.ConsoleTestApp
     {
         private static IServiceProvider _serviceProvider;
 
+        private static IRepository<Currency> _repository;
+
         static async Task Main(string[] args)
         {
             Configure();
@@ -16,6 +19,11 @@ namespace Exchangy.FixerIoFramework.ConsoleTestApp
             //var query = client.BuildQuery(KeyValuePair.Create("symbols", "USD,AUD,CAD,PLN,MXN"));
             //var res = await client.GetAsync("latest", query);
             var res1 = await client.LatestAsync(Symbols.AED, Symbols.AFN, Symbols.AMD);
+
+
+            _repository.Add(res1.Currency);
+            _repository.Save();
+
         }
 
         private static void Configure()
