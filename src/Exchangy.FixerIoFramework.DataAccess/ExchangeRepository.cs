@@ -6,32 +6,21 @@ namespace Exchangy.FixerIoFramework.DataAccess
 {
     public class ExchangeRepository : IExchangeRepository
     {
-
-        public async Task Insert(CurrencyRequests currencyRequests)
+        private readonly ExchangyContext _context;
+        public ExchangeRepository(ExchangyContext context)
         {
-            DbContextOptions<ExchangyDbContext> options = new DbContextOptionsBuilder<ExchangyDbContext>()
-            .UseInMemoryDatabase(databaseName: "ExchangeDb")
-            .Options;
-
-            using ExchangyDbContext context = new ExchangyDbContext(options);
-
-            await context.CurrencyRequests.AddAsync(currencyRequests);
-            await context.SaveChangesAsync();
+            _context = context;
         }
 
-        public async Task<List<CurrencyRequests>> Get()
+        public async Task Add(CurrencyRequest currencyRequests)
         {
-            DbContextOptions<ExchangyDbContext> options = new DbContextOptionsBuilder<ExchangyDbContext>()
-            .UseInMemoryDatabase(databaseName: "ExchangeDb")
-            .Options;
+            await _context.CurrencyRequests.AddAsync(currencyRequests);
+            await _context.SaveChangesAsync();
+        }
 
-            using ExchangyDbContext context = new ExchangyDbContext(options);
-
-            List<CurrencyRequests> currRequests = await context.CurrencyRequests
-                .Include(x => x.Rates)
-                .ToListAsync();
-
-            return currRequests;
+        public IAsyncEnumerable<CurrencyRequest> Get()
+        {
+            return _context.CurrencyRequests.Include(x => x.Rates).AsAsyncEnumerable();
         }
     }
 }

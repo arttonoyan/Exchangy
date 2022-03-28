@@ -3,13 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Exchangy.FixerIoFramework.DataAccess
 {
-    public class RateResults
+    public class RateResult
     {
-        [Key]
-        public int RateResultsId { get; set; }
+        public int RateResultId { get; set; }
         public string Currency { get; set; }
         public double Rate { get; set; }
-        [ForeignKey("CurrencyRequestsId")]
-        public virtual CurrencyRequests CurrencyRequest { get; set; }
+
+        public int CurrencyRequestId { get; set; }
+        public virtual CurrencyRequest CurrencyRequest { get; set; }
     }
 }

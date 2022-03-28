@@ -5,7 +5,7 @@ namespace Exchangy.FixerIoFramework.DataAccess
 {
     public interface IExchangeRepository
     {
-        Task<List<CurrencyRequests>> Get();
-        Task Insert(CurrencyRequests currencyRequests);
+        IAsyncEnumerable<CurrencyRequest> Get();
+        Task Add(CurrencyRequest currencyRequests);
     }
 }
