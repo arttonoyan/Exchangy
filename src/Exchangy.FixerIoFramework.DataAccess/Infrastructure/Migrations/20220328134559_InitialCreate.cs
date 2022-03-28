@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Exchangy.FixerIoFramework.DataAccess.Migrations
+namespace Exchangy.DataAccess.Migrations
 {
     public partial class InitialCreate : Migration
     {

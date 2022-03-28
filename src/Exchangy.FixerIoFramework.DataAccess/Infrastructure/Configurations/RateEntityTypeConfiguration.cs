@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Exchangy.FixerIoFramework.DataAccess.EntityTypeConfigurations
+namespace Exchangy.DataAccess.Configurations
 {
-    public class RateResultEntityTypeConfiguration : IEntityTypeConfiguration<RateResult>
+    public class RateEntityTypeConfiguration : IEntityTypeConfiguration<Rate>
     {
-        public void Configure(EntityTypeBuilder<RateResult> builder)
+        public void Configure(EntityTypeBuilder<Rate> builder)
         {
             builder
                 .HasKey(b => b.RateResultId);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Exchangy.FixerIoFramework.DataAccess
+namespace Exchangy.DataAccess
 {
     public class ExchangeRepository : IExchangeRepository
     {
@@ -12,15 +12,19 @@ namespace Exchangy.FixerIoFramework.DataAccess
             _context = context;
         }
 
-        public async Task Add(CurrencyRequest currencyRequests)
-        {
-            await _context.CurrencyRequests.AddAsync(currencyRequests);
-            await _context.SaveChangesAsync();
-        }
+        public Task AddAsync(Currency currencyRequests) =>
+            ResilientTransaction.New(_context)
+                .ExecuteAsync(async () =>
+                {
+                    await _context.CurrencyRequests.AddAsync(currencyRequests);
+                    await _context.SaveChangesAsync();
+                });
 
-        public IAsyncEnumerable<CurrencyRequest> Get()
+        public IAsyncEnumerable<Currency> GetAsync()
         {
-            return _context.CurrencyRequests.Include(x => x.Rates).AsAsyncEnumerable();
+            return _context.CurrencyRequests
+                .Include(x => x.Rates)
+                .AsAsyncEnumerable();
         }
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Exchangy.FixerIoFramework.DataAccess
+namespace Exchangy.DataAccess
 {
     public interface IExchangeRepository
     {
-        IAsyncEnumerable<CurrencyRequest> Get();
-        Task Add(CurrencyRequest currencyRequests);
+        IAsyncEnumerable<Currency> GetAsync();
+        Task AddAsync(Currency currencyRequests);
     }
 }

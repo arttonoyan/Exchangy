@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Exchangy.FixerIoFramework.DataAccess\Exchangy.FixerIoFramework.DataAccess.csproj" />
+    <ProjectReference Include="..\Exchangy.FixerIoFramework.DataAccess\Exchangy.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

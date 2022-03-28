@@ -1,32 +1,20 @@
-﻿using Exchangy.FixerIoFramework.DataAccess.EntityTypeConfigurations;
+﻿using Exchangy.DataAccess.Configurations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Exchangy.FixerIoFramework.DataAccess
+namespace Exchangy.DataAccess
 {
     public class ExchangyContext : DbContext
     {
-        public ExchangyContext() : base()
-        { }
         public ExchangyContext(DbContextOptions<ExchangyContext> options)
         : base(options)
-        {
-            Database.EnsureCreated();
-        }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //        optionsBuilder.UseSqlite("Data Source=ExchangeDefaultDb");
-        //    }
-        //}
+        { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CurrencyRequestEntityTypeConfiguration).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CurrencyEntityTypeConfiguration).Assembly);
         }
 
-        public DbSet<CurrencyRequest> CurrencyRequests { get; set; }
-        public DbSet<RateResult> RateResults { get; set; }
+        public DbSet<Currency> CurrencyRequests { get; set; }
+        public DbSet<Rate> RateResults { get; set; }
     }
 }

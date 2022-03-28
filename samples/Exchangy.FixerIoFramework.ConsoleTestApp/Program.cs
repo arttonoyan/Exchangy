@@ -1,10 +1,10 @@
-﻿using Exchangy.FixerIoFramework.DataAccess;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using Exchangy.DataAccess;
 
 namespace Exchangy.FixerIoFramework.ConsoleTestApp
 {
@@ -45,7 +45,7 @@ namespace Exchangy.FixerIoFramework.ConsoleTestApp
 
             var context = _serviceProvider.GetService<IExchangeRepository>();
 
-            CurrencyRequest currRequest = new()
+            DataAccess.Currency currRequest = new()
             {
                 BaseCurrency = result.Currency.Base,
                 RequestDate = Convert.ToDateTime(result.Currency.Date)
@@ -54,18 +54,20 @@ namespace Exchangy.FixerIoFramework.ConsoleTestApp
             if (result.Currency.Rates.Count > 0)
             {
                 currRequest.Rates = new();
-                foreach (KeyValuePair<string, double> rate in result.Currency.Rates)
+                foreach (var rate in result.Currency.Rates)
                 {
-                    currRequest.Rates.Add(new RateResult
+                    currRequest.Rates.Add(new Rate
                     {
                         Currency = rate.Key,
-                        Rate = rate.Value
+                        Value = rate.Value
                     });
                 }
             }
 
-            await context.Add(currRequest);
-            List<CurrencyRequest> CurrencyRequests = await context.Get().ToListAsync();
+            await context.AddAsync(currRequest);
+            List<DataAccess.Currency> CurrencyRequests = await context
+                .GetAsync()
+                .ToListAsync();
         }
 
         private static void Configure()
@@ -78,7 +80,7 @@ namespace Exchangy.FixerIoFramework.ConsoleTestApp
                 options.AccessKey = "5bb9e34a850d88ee925a582135d75262";
             });
 
-            services.AddSqliteExchangeDbContext();
+            services.AddSqliteExchangyDataAccess();
 
             _serviceProvider = services.BuildServiceProvider();
         }
