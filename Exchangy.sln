@@ -17,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.FixerIoFramework.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.FixerIoFramework.Tests", "src\Exchangy.FixerIoFramework.Tests\Exchangy.FixerIoFramework.Tests.csproj", "{789736DC-83D8-4A86-A84B-C98F0133A48D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.DataAccess", "src\Exchangy.FixerIoFramework.DataAccess\Exchangy.DataAccess.csproj", "{49637819-D3EB-40F9-816B-5E5EEF0168B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.DataAccess", "src\Exchangy.DataAccess\Exchangy.DataAccess.csproj", "{49637819-D3EB-40F9-816B-5E5EEF0168B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.DataAccess.DependencyInjection", "src\Exchangy.FixerIoFramework.DataAccess.DependencyInjection\Exchangy.DataAccess.DependencyInjection.csproj", "{75D9DB82-F187-4912-ABB3-DFA304CD90DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exchangy.DataAccess.DependencyInjection", "src\Exchangy.DataAccess.DependencyInjection\Exchangy.DataAccess.DependencyInjection.csproj", "{75D9DB82-F187-4912-ABB3-DFA304CD90DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

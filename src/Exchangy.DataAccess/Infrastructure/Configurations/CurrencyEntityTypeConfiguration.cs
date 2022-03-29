@@ -8,7 +8,7 @@ namespace Exchangy.DataAccess.Configurations
         public void Configure(EntityTypeBuilder<Currency> builder)
         {
             builder
-                .HasKey(b => b.CurrencyRequestId);
+                .HasKey(b => b.CurrencyId);
         }
     }
 }

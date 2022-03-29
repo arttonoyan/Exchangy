@@ -8,12 +8,12 @@ namespace Exchangy.DataAccess.Configurations
         public void Configure(EntityTypeBuilder<Rate> builder)
         {
             builder
-                .HasKey(b => b.RateResultId);
+                .HasKey(b => b.RateId);
 
             builder
-                .HasOne(p => p.CurrencyRequest)
+                .HasOne(p => p.BaseCurrency)
                 .WithMany(b => b.Rates)
-                .HasForeignKey(p => p.CurrencyRequestId);
+                .HasForeignKey(p => p.CurrencyId);
         }
     }
 }

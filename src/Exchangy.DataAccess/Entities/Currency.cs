@@ -5,7 +5,7 @@ namespace Exchangy.DataAccess
 {
     public class Currency
     {
-        public int CurrencyRequestId { get; set; }
+        public int CurrencyId { get; set; }
         public string BaseCurrency { get; set; }
         public DateTime RequestDate { get; set; }
 

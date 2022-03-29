@@ -12,17 +12,17 @@ namespace Exchangy.DataAccess
             _context = context;
         }
 
-        public Task AddAsync(Currency currencyRequests) =>
+        public Task AddAsync(Currency currencies) =>
             ResilientTransaction.New(_context)
                 .ExecuteAsync(async () =>
                 {
-                    await _context.CurrencyRequests.AddAsync(currencyRequests);
+                    await _context.Currencies.AddAsync(currencies);
                     await _context.SaveChangesAsync();
                 });
 
         public IAsyncEnumerable<Currency> GetAsync()
         {
-            return _context.CurrencyRequests
+            return _context.Currencies
                 .Include(x => x.Rates)
                 .AsAsyncEnumerable();
         }

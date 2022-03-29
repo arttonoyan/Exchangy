@@ -6,6 +6,6 @@ namespace Exchangy.DataAccess
     public interface IExchangeRepository
     {
         IAsyncEnumerable<Currency> GetAsync();
-        Task AddAsync(Currency currencyRequests);
+        Task AddAsync(Currency currencies);
     }
 }

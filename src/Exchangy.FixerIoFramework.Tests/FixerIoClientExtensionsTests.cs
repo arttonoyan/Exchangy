@@ -56,7 +56,7 @@ namespace Exchangy.FixerIoFramework.Tests
                 {
                     Content = $"{path}-{query}",
                     HttpStatusCode = System.Net.HttpStatusCode.OK
-                }); ;
+                }); 
             }
         }
     }

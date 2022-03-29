@@ -11,30 +11,6 @@ namespace Exchangy.FixerIoFramework.ConsoleTestApp
     class Program
     {
         private static IServiceProvider _serviceProvider;
-        //private void SaveCurrencyRates(IFixerResponse result)
-        //{
-        //    CurrencyRequests currRequests = new()
-        //    {
-        //        BaseCurrency = result.Currency.Base,
-        //        RequestDate = Convert.ToDateTime(result.Currency.Date)
-        //    };
-
-        //    if (result.Currency.Rates.Count > 0)
-        //    {
-        //        currRequests.Rates = new();
-        //        foreach (KeyValuePair<string, double> rate in result.Currency.Rates)
-        //        {
-        //            currRequests.Rates.Add(new RateResults
-        //            {
-        //                Currency = rate.Key,
-        //                Rate = rate.Value
-        //            });
-        //        }
-        //    }
-
-        //     _exchangeRepository.Insert(currRequests).Wait();
-        //     //var a = _exchangeRepository.Get().Result;
-        //}
         static async Task Main(string[] args)
         {
             Configure();
@@ -65,7 +41,7 @@ namespace Exchangy.FixerIoFramework.ConsoleTestApp
             }
 
             await context.AddAsync(currRequest);
-            List<DataAccess.Currency> CurrencyRequests = await context
+            List<DataAccess.Currency> Currencies = await context
                 .GetAsync()
                 .ToListAsync();
         }

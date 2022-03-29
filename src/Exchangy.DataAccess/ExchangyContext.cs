@@ -14,7 +14,7 @@ namespace Exchangy.DataAccess
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CurrencyEntityTypeConfiguration).Assembly);
         }
 
-        public DbSet<Currency> CurrencyRequests { get; set; }
-        public DbSet<Rate> RateResults { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<Rate> Rates { get; set; }
     }
 }

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Exchangy.FixerIoFramework.DataAccess.DependencyInjection\Exchangy.DataAccess.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\src\Exchangy.DataAccess.DependencyInjection\Exchangy.DataAccess.DependencyInjection.csproj" />
     <ProjectReference Include="..\..\src\Exchangy.FixerIoFramework.DependencyInjection\Exchangy.FixerIoFramework.DependencyInjection.csproj" />
   </ItemGroup>
 
