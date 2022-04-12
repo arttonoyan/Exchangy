@@ -1,7 +1,8 @@
-﻿using Exchangy.DataAccess;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Exchangy.DataAccess.Extensions.DependencyInjection
 {
     public static class DataAccessServiceCollectionExtensions
     {
