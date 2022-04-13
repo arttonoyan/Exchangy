@@ -11,7 +11,7 @@ namespace Exchangy.FixerIoFramework.Tests
 {
     public class FixerIoClientExtensionsTests
     {
-        private IServiceProvider Configure()
+        private static IServiceProvider Configure()
         {
             var services = new ServiceCollection();
 

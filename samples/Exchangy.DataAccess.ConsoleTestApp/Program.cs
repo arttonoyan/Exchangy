@@ -1,10 +1,10 @@
-﻿using Exchangy.DataAccess;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using Exchangy.DataAccess.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 
 namespace Exchangy.DataAccess.ConsoleTestApp
 {
@@ -50,7 +50,7 @@ namespace Exchangy.DataAccess.ConsoleTestApp
         {
             var services = new ServiceCollection();
 
-            services.AddSqliteExchangyDataAccess();
+            services.AddExchangyDataAccess(options => options.UseSqlite("Data Source=ExchangeDb"));
 
             _serviceProvider = services.BuildServiceProvider();
         }
