@@ -11,7 +11,7 @@ namespace Exchangy.FixerIoFramework.Tests
 {
     public class FixerIoClientExtensionsTests
     {
-        private IServiceProvider Configure()
+        private static IServiceProvider Configure()
         {
             var services = new ServiceCollection();
 
@@ -56,7 +56,7 @@ namespace Exchangy.FixerIoFramework.Tests
                 {
                     Content = $"{path}-{query}",
                     HttpStatusCode = System.Net.HttpStatusCode.OK
-                }); ;
+                }); 
             }
         }
     }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -37,9 +35,9 @@ namespace Exchangy.FixerIoFramework
 
         private async Task<IFixerResponse> InnerGetAsync(string path, string query)
         {
-            var request = HttpQueryBuilder.BuildRequest(path, KeyValuePair
+            string request = HttpQueryBuilder.BuildRequest(path, KeyValuePair
                 .Create("access_key", _accessKey), query);
-            using var response = await _httpClient.GetAsync(request);
+            using HttpResponseMessage response = await _httpClient.GetAsync(request);
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
