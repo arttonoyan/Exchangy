@@ -9,7 +9,7 @@ on:
     branches: [ '*' ]
 
 env:
-  PROJECT_PATH: 'ForTest.sln'
+  PROJECT_PATH: 'Exchangy.sln'
 
 jobs:
   build:
